@@ -1,0 +1,54 @@
+.journees{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    align-items: center;
+}
+
+ul.journees{
+    margin: auto;
+}
+
+.journees li:first-child {
+    margin-top: 120px;
+}
+
+.journee{
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.listeCreneaux li:first-child {
+    margin:0px;
+}
+
+.detailsCreneaux {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.detailsCase{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 230px;
+    justify-content: center;
+}
+
+.detailsCase li{
+    width: 30%;
+    height: 30px;
+    border: 2px black solid;
+}
+
+.detailsCase .vide{
+    width:100%;
+    height: 100%;
+    background-color: green;
+}
+.detailsCase .rempli{
+    width:100%;
+    height: 100%;
+    background-color: red;
+}

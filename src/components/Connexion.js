@@ -20,7 +20,7 @@ export default function Connexion() {
     if (authMode === 'signin' || authMode === 'signupok') {
         if (authMode === 'signin') {
             return (<>
-                <img src={logo} alt='Logo de Groupomania' className='gpm-logo' />
+                <img src={logo} alt='TPL Louvre' className='gpm-logo' />
                 <div className='form'>
                     <div className="gpm-connexion">
                         <h2>Bienvenue !</h2>

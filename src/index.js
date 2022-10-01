@@ -12,6 +12,7 @@ import CreatePost from './components/CreatePost';
 import Banner from './components/Banner';
 import DeletePost from './components/DeletePost';
 import Logout from './components/Logout';
+import Journees from './components/Journees';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +26,9 @@ root.render(
           <Route path='new' element={<CreatePost />} />{/*route pour créer un nouveau post */}
           <Route path='modify-post/:postId' element={<CreatePost />} /> {/*route pour modifier un post */}
           <Route path='delete-post/:postId' element={<DeletePost />} />  {/*route pour supprimer un post */}
+        </Route>
+        <Route path='journees/' element={<Banner />} > {/*route parent avec le banner*/}
+          <Route path='all' element={<Journees />}  />  {/*route qui affiche tous les journées*/}      
         </Route>
         <Route path='logout' element={<Logout />}  /> {/*route pour se deconnecter */}
       </Routes>
