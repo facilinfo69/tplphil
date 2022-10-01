@@ -7,11 +7,18 @@ function Journees() {
   let [retour, setRetour] = useState(0);
   let [journees, setJournees] = useState(null);
   let [creneaux, setCreneaux] = useState(null);
+  let api;
+
+  if(process.env.REACT_APP_VAR_API != null) {
+    api = process.env.REACT_APP_VAR_API
+  } else {
+    api = "https://tplphil.herokuapp.com/"
+  }
 
 
   // recupere tous les post sera lancé à chaque fois que la variable retour sera mis à jour cad à chaque click sur le coeur dans le composant Like.
   useEffect(() => {
-    console.log(process.env.REACT_APP_VAR_API);
+    console.log(api);
     let promesseJournees = recupererJournees();
     promesseJournees
       .then(function (valeur) {
@@ -84,7 +91,7 @@ function Journees() {
   //fonction qui récupére tous les posts : objet Posts, admin true or false decodé
   //fonction qui récupére tous les journées : objet Journées, admin true or false decodé
   async function recupererJournees() {
-    return fetch(`${process.env.REACT_APP_VAR_API}api/journee`, {
+    return fetch(`${api}api/journee`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -104,7 +111,7 @@ function Journees() {
 
   //fonction qui récupére tous les journées : objet Journées, admin true or false decodé
   async function recupererCreneaux() {
-    return fetch(`${process.env.REACT_APP_VAR_API}api/creneau/`, {
+    return fetch(`${api}api/creneau/`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
