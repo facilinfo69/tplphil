@@ -11,7 +11,7 @@ function Journees() {
 
   // recupere tous les post sera lancé à chaque fois que la variable retour sera mis à jour cad à chaque click sur le coeur dans le composant Like.
   useEffect(() => {
-
+    console.log(process.env.REACT_APP_VAR_API);
     let promesseJournees = recupererJournees();
     promesseJournees
       .then(function (valeur) {
@@ -84,7 +84,7 @@ function Journees() {
   //fonction qui récupére tous les posts : objet Posts, admin true or false decodé
   //fonction qui récupére tous les journées : objet Journées, admin true or false decodé
   async function recupererJournees() {
-    return fetch("http://localhost:3000/api/journee", {
+    return fetch(`${process.env.REACT_APP_VAR_API}api/journee`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ function Journees() {
 
   //fonction qui récupére tous les journées : objet Journées, admin true or false decodé
   async function recupererCreneaux() {
-    return fetch(`http://localhost:3000/api/creneau/`, {
+    return fetch(`${process.env.REACT_APP_VAR_API}api/creneau/`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
